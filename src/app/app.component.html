@@ -7,46 +7,37 @@
 			<div class="logo">
 			</div>
 			<ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-				<li nz-menu-item><span><i class="anticon anticon-appstore"></i><span class="nav-text">首页</span></span>
+				<li nz-menu-item routerLink="/dashboard" routerLinkActive="active">
+					<span>
+						<i class="anticon anticon-appstore"></i>
+						<span class="nav-text">首页</span>
+					</span>
+				</li>
+				<li nz-menu-item><span><i class="anticon anticon-search"></i><span class="nav-text">专利检索</span></span>
 				</li>
 				<li nz-submenu>
 					<span title><i class="anticon anticon-database"></i><span class="nav-text">项目管理</span></span>
 					<ul>
-						<li nz-menu-item>用户管理</li>
-						<li nz-menu-item>角色管理</li>
-						<li nz-menu-item>权限管理</li>
+						<li nz-menu-item>创建项目</li>
+						<li nz-menu-item>项目跟踪</li>
+						<li nz-menu-item>项目管理</li>
 					</ul>
 				</li>
 				<li nz-submenu>
 					<span title><i class="anticon anticon-folder"></i><span class="nav-text">档案管理</span></span>
 					<ul>
-						<li nz-menu-item>用户管理</li>
-						<li nz-menu-item>角色管理</li>
-						<li nz-menu-item>权限管理</li>
+						<li nz-menu-item>档案检索</li>
+						<li nz-menu-item>档案导出</li>
 					</ul>
 				</li>
-				<li nz-submenu>
-					<span title><i class="anticon anticon-usergroup-add"></i><span class="nav-text">客户管理</span></span>
-					<ul>
-						<li nz-menu-item>用户管理</li>
-						<li nz-menu-item>角色管理</li>
-						<li nz-menu-item>权限管理</li>
-					</ul>
-				</li>
+				<li nz-menu-item><span><i class="anticon anticon-usergroup-add"></i><span
+						class="nav-text">客户管理</span></span>
 				<li nz-submenu>
 					<span title><i class="anticon anticon-user"></i><span class="nav-text">账户管理</span></span>
 					<ul>
-						<li nz-menu-item>用户管理</li>
-						<li nz-menu-item>角色管理</li>
-						<li nz-menu-item>权限管理</li>
-					</ul>
-				</li>
-				<li nz-submenu>
-					<span title><i class="anticon anticon-user"></i><span class="nav-text">账户管理</span></span>
-					<ul>
-						<li nz-menu-item>用户管理</li>
-						<li nz-menu-item>角色管理</li>
-						<li nz-menu-item>权限管理</li>
+						<li nz-menu-item routerLink="/user">用户管理</li>
+						<li nz-menu-item routerLink="/role">角色管理</li>
+						<li nz-menu-item routerLink="/permission">权限管理</li>
 					</ul>
 				</li>
 				<li nz-submenu>
@@ -60,45 +51,35 @@
 				</li>
 			</ul>
 		</nz-sider>
+
 		<nz-layout>
+
 			<nz-header style="background: #fff; padding:0;">
 				<i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed"
 				   [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
 			</nz-header>
+
 			<nz-content style="margin:0 16px;">
+
 				<nz-breadcrumb style="margin:12px 0;">
-					<nz-breadcrumb-item>User</nz-breadcrumb-item>
-					<nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+					<nz-breadcrumb-item *ngFor="let item of position">{{item}}</nz-breadcrumb-item>
 				</nz-breadcrumb>
+
 				<div style="padding:24px; background: #fff; min-height: 360px;">
 					<!--content-->
-					this is content
+					<!--content-->
+					<!--content-->
+					<!--content-->
 
+					<router-outlet></router-outlet>
 
-					<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" [nzShowSizeChanger]="true">
-						<thead nz-thead>
-						<tr>
-							<th nz-th><span>Name</span></th>
-							<th nz-th><span>Age</span></th>
-							<th nz-th><span>Address</span></th>
-						</tr>
-						</thead>
-						<tbody nz-tbody>
-						<tr nz-tbody-tr *ngFor="let data of nzTable.data">
-							<td nz-td>
-								<a>{{data.name}}</a>
-							</td>
-							<td nz-td>{{data.age}}</td>
-							<td nz-td>{{data.address}}</td>
-						</tr>
-						</tbody>
-					</nz-table>
-
-
+					<!--content -->
+					<!--content -->
+					<!--content -->
 					<!--content -->
 				</div>
 			</nz-content>
-			<nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+			<nz-footer style="text-align: center;"> Design ©2017 Powered By owen-carter</nz-footer>
 		</nz-layout>
 	</nz-layout>
 

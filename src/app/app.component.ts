@@ -6,6 +6,7 @@ import {
     Output
 } from '@angular/core';
 
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -14,23 +15,15 @@ import {
 export class AppComponent implements OnInit {
     title = 'app';
     isCollapsed = false;
-    _dataSet = [];
+    position = ['首页', '用户管理'];
 
     constructor() {
     }
 
     ngOnInit() {
-        for (let i = 0; i < 46; i++) {
-            this._dataSet.push({
-                key: i,
-                name: `Edward King ${i}`,
-                age: 32,
-                address: `London, Park Lane no. ${i}`,
-            });
-        }
+
     }
 
-    nzCollapseChange() {
-        console.warn('2323')
-    }
+
 }
+
