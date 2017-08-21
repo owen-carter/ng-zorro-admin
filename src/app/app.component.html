@@ -1,20 +1,107 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
+<!--引入根组件-->
+<nz-root>
 
+	<!--content-->
+	<nz-layout>
+		<nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+			<div class="logo">
+			</div>
+			<ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+				<li nz-menu-item><span><i class="anticon anticon-appstore"></i><span class="nav-text">首页</span></span>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-database"></i><span class="nav-text">项目管理</span></span>
+					<ul>
+						<li nz-menu-item>用户管理</li>
+						<li nz-menu-item>角色管理</li>
+						<li nz-menu-item>权限管理</li>
+					</ul>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-folder"></i><span class="nav-text">档案管理</span></span>
+					<ul>
+						<li nz-menu-item>用户管理</li>
+						<li nz-menu-item>角色管理</li>
+						<li nz-menu-item>权限管理</li>
+					</ul>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-usergroup-add"></i><span class="nav-text">客户管理</span></span>
+					<ul>
+						<li nz-menu-item>用户管理</li>
+						<li nz-menu-item>角色管理</li>
+						<li nz-menu-item>权限管理</li>
+					</ul>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-user"></i><span class="nav-text">账户管理</span></span>
+					<ul>
+						<li nz-menu-item>用户管理</li>
+						<li nz-menu-item>角色管理</li>
+						<li nz-menu-item>权限管理</li>
+					</ul>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-user"></i><span class="nav-text">账户管理</span></span>
+					<ul>
+						<li nz-menu-item>用户管理</li>
+						<li nz-menu-item>角色管理</li>
+						<li nz-menu-item>权限管理</li>
+					</ul>
+				</li>
+				<li nz-submenu>
+					<span title><i class="anticon anticon-tool"></i><span class="nav-text">系统管理</span></span>
+					<ul>
+						<li nz-menu-item>数据库备份</li>
+						<li nz-menu-item>系统升级</li>
+					</ul>
+				</li>
+				<li nz-menu-item><span><i class="anticon anticon-setting"></i><span class="nav-text">系统配置</span></span>
+				</li>
+			</ul>
+		</nz-sider>
+		<nz-layout>
+			<nz-header style="background: #fff; padding:0;">
+				<i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed"
+				   [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+			</nz-header>
+			<nz-content style="margin:0 16px;">
+				<nz-breadcrumb style="margin:12px 0;">
+					<nz-breadcrumb-item>User</nz-breadcrumb-item>
+					<nz-breadcrumb-item>Bill</nz-breadcrumb-item>
+				</nz-breadcrumb>
+				<div style="padding:24px; background: #fff; min-height: 360px;">
+					<!--content-->
+					this is content
+
+
+					<nz-table #nzTable [nzDataSource]="_dataSet" [nzPageSize]="10" [nzShowSizeChanger]="true">
+						<thead nz-thead>
+						<tr>
+							<th nz-th><span>Name</span></th>
+							<th nz-th><span>Age</span></th>
+							<th nz-th><span>Address</span></th>
+						</tr>
+						</thead>
+						<tbody nz-tbody>
+						<tr nz-tbody-tr *ngFor="let data of nzTable.data">
+							<td nz-td>
+								<a>{{data.name}}</a>
+							</td>
+							<td nz-td>{{data.age}}</td>
+							<td nz-td>{{data.address}}</td>
+						</tr>
+						</tbody>
+					</nz-table>
+
+
+					<!--content -->
+				</div>
+			</nz-content>
+			<nz-footer style="text-align: center;">Ant Design ©2017 Implement By Angular</nz-footer>
+		</nz-layout>
+	</nz-layout>
+
+
+	<!--content end-->
+</nz-root>
