@@ -48,3 +48,20 @@ function deployApp(){
     cp  -R -f -v ./dist/* ${publishPath}
     systemctl restart nginx.service
 }
+
+
+cmdList=( "initEnvironment" "deployApp" "exit" )
+OPTION=$(whiptail --title "owen-carter deploy Menu Dialog" --menu "Choose your event" 15 60 4 \
+"0" "init the env" \
+"1" "deploy the app again" \
+"2" "exit"  3>&1 1>&2 2>&3)
+
+exitStatus=$?
+if [ ${exitStatus} = 0 ]; then
+    echo "Your chosen option: #${OPTION} - ${cmdList[OPTION]}"
+    ${cmdList[OPTION]}
+else
+    echo "You chose Cancel."
+fi
+
+exit 0
