@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'nz-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.less']
+    selector: 'nz-system',
+    templateUrl: './system.component.html',
+    styleUrls: ['./system.component.less']
 })
-export class DashboardComponent implements OnInit {
+export class SystemComponent implements OnInit {
 
     _cpu = 70;
     _men = 7;

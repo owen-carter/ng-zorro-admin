@@ -14,11 +14,14 @@ import {RoleComponent} from './page/role/role.component';
 import {PermissionComponent} from './page/permission/permission.component';
 import {ConfigureComponent} from './page/configure/configure.component';
 import {SettingComponent} from './page/setting/setting.component';
-import { UpgradeComponent } from './page/upgrade/upgrade.component';
-import { BackupComponent } from './page/backup/backup.component';
-import { LicenseComponent } from './page/license/license.component';
-import { LogComponent } from './page/log/log.component';
-import { AuditComponent } from './page/audit/audit.component';
+import {UpgradeComponent} from './page/upgrade/upgrade.component';
+import {BackupComponent} from './page/backup/backup.component';
+import {LicenseComponent} from './page/license/license.component';
+import {LogComponent} from './page/log/log.component';
+import {AuditComponent} from './page/audit/audit.component';
+import {SystemComponent} from './page/system/system.component';
+import {SearchComponent} from './page/search/search.component';
+import { CustomerComponent } from './page/customer/customer.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +36,10 @@ import { AuditComponent } from './page/audit/audit.component';
         BackupComponent,
         LicenseComponent,
         LogComponent,
-        AuditComponent
+        AuditComponent,
+        SystemComponent,
+        SearchComponent,
+        CustomerComponent
     ],
     imports: [
         BrowserModule,
