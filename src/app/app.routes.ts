@@ -15,6 +15,8 @@ import {LogComponent} from './page/log/log.component';
 import {AuditComponent} from './page/audit/audit.component';
 import {SystemComponent} from './page/system/system.component';
 import {SearchComponent} from './page/search/search.component';
+import {CustomerComponent} from './page/customer/customer.component';
+
 
 export const routes: Routes = [
     {path: '', component: DashboardComponent},
@@ -30,6 +32,7 @@ export const routes: Routes = [
     {path: 'audit', component: AuditComponent},
     {path: 'system', component: SystemComponent},
     {path: 'search', component: SearchComponent},
+    {path: 'customer', component: CustomerComponent},
     {path: 'configure', component: ConfigureComponent}
     // { path: '**', component: PageNotFoundComponent }
 ];
