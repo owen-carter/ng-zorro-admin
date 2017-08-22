@@ -14,6 +14,11 @@ import {RoleComponent} from './page/role/role.component';
 import {PermissionComponent} from './page/permission/permission.component';
 import {ConfigureComponent} from './page/configure/configure.component';
 import {SettingComponent} from './page/setting/setting.component';
+import { UpgradeComponent } from './page/upgrade/upgrade.component';
+import { BackupComponent } from './page/backup/backup.component';
+import { LicenseComponent } from './page/license/license.component';
+import { LogComponent } from './page/log/log.component';
+import { AuditComponent } from './page/audit/audit.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +28,12 @@ import {SettingComponent} from './page/setting/setting.component';
         RoleComponent,
         PermissionComponent,
         ConfigureComponent,
-        SettingComponent
+        SettingComponent,
+        UpgradeComponent,
+        BackupComponent,
+        LicenseComponent,
+        LogComponent,
+        AuditComponent
     ],
     imports: [
         BrowserModule,

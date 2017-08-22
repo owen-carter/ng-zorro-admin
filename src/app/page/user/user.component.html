@@ -1,4 +1,4 @@
-<div class="gutter-example" style="margin-bottom: 30px">
+<div class="gutter-example" style="margin-bottom: 20px">
 	<div nz-row [nzGutter]="8">
 		<div nz-col class="gutter-row" [nzSpan]="6">
 			<div class="gutter-box"></div>
@@ -50,12 +50,45 @@
 		<td nz-td>{{data.age}}</td>
 		<td nz-td>{{data.address}}</td>
 		<td nz-td style="text-align: right">
-			<button nz-button [nzType]="'primary'" [nzShape]="'circle'">
-				<i class="anticon anticon-edit"></i>
-			</button>
-			<button nz-button [nzType]="'primary'" [nzShape]="'circle'">
-				<i class="anticon anticon-close"></i>
-			</button>
+			<!--btn-->
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-edit"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>可以编辑用户信息</p>
+						<p>可以编辑用户信息</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+
+
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'danger'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-lock"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>锁定该用户！</p>
+						<p>将无法登陆！</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'danger'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-close"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>删除该用户！</p>
+						<p>该用户数据将不再存在！</p>
+						<p>请谨慎操作！</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+			<!---->
 		</td>
 	</tr>
 	</tbody>

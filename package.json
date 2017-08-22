@@ -4,10 +4,11 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "github": "ng github-pages:deploy --message 'Optional commit message'",
     "e2e": "ng e2e"
   },
   "private": true,
