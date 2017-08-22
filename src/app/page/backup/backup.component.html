@@ -1,3 +1,98 @@
-<p>
-  backup works!
-</p>
+<div class="gutter-example" style="margin-bottom: 20px">
+	<div nz-row [nzGutter]="8">
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="4">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="8" style="text-align: right">
+			<div class="gutter-box">
+				<button nz-button [nzType]="'primary'" style="width: 100px;">
+					<i class="anticon anticon-file-add"></i>
+					<span>创建快照</span>
+				</button>
+				<i style="display: inline-block;width: 1px;"></i>
+				<button nz-button [nzType]="'primary'" style="width: 100px;">
+					<i class="anticon anticon-close"></i>
+					<span>删除快照</span>
+				</button>
+			</div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box" style="text-align: right">
+				<nz-input [nzType]="'search'"
+						  [nzPlaceHolder]="'请输入时间进行过滤'"
+						  [(ngModel)]="_value"
+						  style="width: 100%;">
+				</nz-input>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nz-table #nzTable [nzDataSource]="historyList" [nzPageSize]="10" [nzShowSizeChanger]="true" nzCheckbox="true">
+	<thead nz-thead>
+	<tr>
+		<th nz-th><span>序号</span></th>
+		<th nz-th><span>备份时间</span></th>
+		<th nz-th><span>文件名</span></th>
+		<th nz-th><span>备注</span></th>
+		<th nz-th style="text-align: right">
+			<span>操作</span>
+		</th>
+	</tr>
+	</thead>
+	<tbody nz-tbody>
+	<tr nz-tbody-tr *ngFor="let data of nzTable.data; let idx = index;">
+		<td nz-td>
+			<a>{{idx+1}}</a>
+		</td>
+		<td nz-td>
+			<a>{{data.name}}</a>
+		</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.address}}</td>
+		<td nz-td style="text-align: right">
+			<!--btn-->
+
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'default'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-cloud-download-o"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>下载该备份文件！</p>
+						<p>防止服务器错误！</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'default'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-reload"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>恢复到该版本！</p>
+						<p>之后信息将丢失！</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+
+			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
+				<button nz-button [nzType]="'danger'" [nzShape]="'circle'" nz-popover>
+					<i class="anticon anticon-close"></i>
+				</button>
+				<ng-template #nzTemplate>
+					<div>
+						<p>删除该次备份记录！</p>
+						<p>请谨慎操作！</p>
+					</div>
+				</ng-template>
+			</nz-popover>
+			<!---->
+		</td>
+	</tr>
+	</tbody>
+</nz-table>

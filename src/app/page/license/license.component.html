@@ -1,3 +1,23 @@
-<p>
-  license works!
-</p>
+<nz-alert [nzType]="'success'"
+		  [nzMessage]="'授权通过，正在授权期限内！'"
+		  [nzDescription]="'Detailed description and advices about successful copywriting.'"
+		  [nzShowIcon]="'true'">
+</nz-alert>
+
+<div class="split-line"></div>
+
+<nz-alert [nzType]="'warning'"
+		  [nzMessage]="'注意！还有一个月，授权即将到期！'"
+		  [nzDescription]="'This is a warning notice about copywriting.'"
+		  [nzShowIcon]="'true'">
+</nz-alert>
+
+<div class="split-line"></div>
+
+<nz-alert [nzType]="'error'"
+		  [nzMessage]="'sorry！您的授权已经过期！'"
+		  [nzDescription]="'相关服务将不能使用！'"
+		  [nzShowIcon]="'true'">
+</nz-alert>
+
+<div class="split-line"></div>

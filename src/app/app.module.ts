@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {AppComponent} from './app.component';
@@ -21,7 +21,7 @@ import {LogComponent} from './page/log/log.component';
 import {AuditComponent} from './page/audit/audit.component';
 import {SystemComponent} from './page/system/system.component';
 import {SearchComponent} from './page/search/search.component';
-import { CustomerComponent } from './page/customer/customer.component';
+import {CustomerComponent} from './page/customer/customer.component';
 
 @NgModule({
     declarations: [
@@ -44,6 +44,7 @@ import { CustomerComponent } from './page/customer/customer.component';
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         BrowserAnimationsModule,
         NgZorroAntdModule.forRoot(),
