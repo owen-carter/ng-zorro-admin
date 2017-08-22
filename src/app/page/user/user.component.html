@@ -1,18 +1,62 @@
-<nz-table #nzTable [nzDataSource]="userList" [nzPageSize]="10" [nzShowSizeChanger]="true">
+<div class="gutter-example" style="margin-bottom: 30px">
+	<div nz-row [nzGutter]="8">
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="4">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="8" style="text-align: right">
+			<div class="gutter-box">
+				<button nz-button [nzType]="'primary'" style="width: 100px;">
+					<i class="anticon anticon-user-add"></i><span>创建用户</span>
+				</button>
+				<i style="display: inline-block;width: 1px;"></i>
+				<button nz-button [nzType]="'primary'" style="width: 100px;">
+					<i class="anticon anticon-usergroup-delete"></i><span>删除用户</span>
+				</button>
+			</div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box" style="text-align: right">
+				<nz-input [nzType]="'search'"
+						  [nzPlaceHolder]="'请输入用户名进行搜索'"
+						  [(ngModel)]="_value"
+						  style="width: 100%;">
+				</nz-input>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nz-table #nzTable [nzDataSource]="userList" [nzPageSize]="10" [nzShowSizeChanger]="true" nzCheckbox="true">
 	<thead nz-thead>
 	<tr>
-		<th nz-th><span>Name</span></th>
-		<th nz-th><span>Age</span></th>
-		<th nz-th><span>Address</span></th>
+		<th nz-th><span>序号</span></th>
+		<th nz-th><span>姓名</span></th>
+		<th nz-th><span>年龄</span></th>
+		<th nz-th><span>地址</span></th>
+		<th nz-th style="text-align: right"><span>操作</span></th>
 	</tr>
 	</thead>
 	<tbody nz-tbody>
-	<tr nz-tbody-tr *ngFor="let data of nzTable.data">
+	<tr nz-tbody-tr *ngFor="let data of nzTable.data; let idx = index;">
+		<td nz-td>
+			<a>{{idx+1}}</a>
+		</td>
 		<td nz-td>
 			<a>{{data.name}}</a>
 		</td>
 		<td nz-td>{{data.age}}</td>
 		<td nz-td>{{data.address}}</td>
+		<td nz-td style="text-align: right">
+			<button nz-button [nzType]="'primary'" [nzShape]="'circle'">
+				<i class="anticon anticon-edit"></i>
+			</button>
+			<button nz-button [nzType]="'primary'" [nzShape]="'circle'">
+				<i class="anticon anticon-close"></i>
+			</button>
+		</td>
 	</tr>
 	</tbody>
 </nz-table>
