@@ -21,3 +21,35 @@
 </nz-alert>
 
 <div class="split-line"></div>
+
+
+<div style="background: #ECECEC;padding:30px;">
+
+	<nz-card style="width:100%;" [nzBordered]="false">
+		<ng-template #title>
+			激活
+		</ng-template>
+		<ng-template #extra>
+			<a>更换序列号</a>
+		</ng-template>
+		<ng-template #body>
+			<p>序列号：</p>
+			<a class="series-number">ab587e1e-6f7a-11e7-8dd6-f07959e0b919</a>
+			<p>激活方法：点击复制序列号，或者下载序列号文件，发送到厂家索取证书文件！</p>
+			<div class="split-line"></div>
+			<nz-input [(ngModel)]="inputValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请输入证书号码！'">
+			</nz-input>
+
+			<div class="split-line"></div>
+			<button nz-button [nzType]="'primary'" style="float: right">
+				<span>激活</span>
+			</button>
+
+		</ng-template>
+
+
+	</nz-card>
+
+</div>
+
+
