@@ -6,7 +6,7 @@
 appName="ng-zorro-admin"
 repoUrl="https://github.com/owen-carter/ng-zorro-admin.git"
 localRepoPath='~/workspace/'
-nginxPath="/var/www/${appName}"
+publishPath="/var/www/${appName}"
 
 function initEnvironment(){
     echo "=======install node========"
@@ -44,7 +44,7 @@ function initEnvironment(){
 function deployApp(){
     git pull origin master
     npm run build
-    rm -rf ${nginxPath}
-    cp  -R -f -v ./dist/* ${nginxPath}
+    rm -rf ${publishPath}
+    cp  -R -f -v ./dist/* ${publishPath}
     systemctl restart nginx.service
 }
