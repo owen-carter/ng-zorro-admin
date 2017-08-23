@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-
+import {ECharts} from 'echarts';
 @Component({
     selector: 'nz-log',
     templateUrl: './log.component.html',
@@ -17,6 +17,7 @@ export class LogComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.dir(ECharts);
     }
 
 
