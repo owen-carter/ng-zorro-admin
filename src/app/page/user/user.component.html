@@ -33,8 +33,16 @@
 	<thead nz-thead>
 	<tr>
 		<th nz-th><span>序号</span></th>
-		<th nz-th><span>姓名</span></th>
-		<th nz-th><span>年龄</span></th>
+		<th nz-th><span>用户名</span></th>
+		<th nz-th><span>工号</span></th>
+		<th nz-th><span>头衔</span></th>
+		<th nz-th><span>真实姓名</span></th>
+		<th nz-th><span>部门</span></th>
+		<th nz-th><span>角色</span></th>
+		<th nz-th><span>账号状态</span></th>
+		<th nz-th><span>注册时间</span></th>
+		<th nz-th><span>最近登陆时间</span></th>
+		<th nz-th><span>登陆次数</span></th>
 		<th nz-th><span>地址</span></th>
 		<th nz-th style="text-align: right"><span>操作</span></th>
 	</tr>
@@ -47,6 +55,14 @@
 		<td nz-td>
 			<a>{{data.name}}</a>
 		</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
 		<td nz-td>{{data.age}}</td>
 		<td nz-td>{{data.address}}</td>
 		<td nz-td style="text-align: right">
@@ -70,7 +86,7 @@
 				</button>
 				<ng-template #nzTemplate>
 					<div>
-						<p>锁定该用户！</p>
+						<p>禁用／解禁该用户！</p>
 						<p>将无法登陆！</p>
 					</div>
 				</ng-template>
