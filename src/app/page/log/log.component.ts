@@ -19,9 +19,8 @@ export class LogComponent implements OnInit {
 
     ngOnInit() {
         const myChart = echarts.init(document.getElementById('log-history-analysis'));
-        const data_val = [22700, 23066, 24066, 23492, 27532, 26694, 28757],
-            xAxis_val = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
-        const data_val1 = [0, 0, 0, 0, 0, 0, 0];
+        const data_val = [22700, 23066, 24066, 23492, 27532, 26694, 28757];
+        const xAxis_val = ['2017/1', '2017/2', '2017/3', '2017/4', '2017/5', '2017/6', '2017/7'];
         const option = {
             backgroundColor: '#29304200',
             grid: {
@@ -36,20 +35,20 @@ export class LogComponent implements OnInit {
                 backgroundColor: '#384157',
                 borderColor: '#384157',
                 borderWidth: 1,
-                formatter: '{b}:{c}',
+                formatter: '{b}:<br>统计到{c}条{a}类型日志',
                 extraCssText: 'box-shadow: 0 0 5px rgba(0, 0, 0, 1)'
             },
             legend: {
-                right: 0,
-                top: 0,
-                data: ['距离'],
+                right: 40,
+                top: 35,
+                data: ['error', 'alert', 'info'],
                 textStyle: {
                     color: '#5c6076'
                 }
             },
             title: {
                 text: '日志历史统计',
-                x: '4%',
+                x: '3%',
                 top: 35,
                 textStyle: {
                     color: '#434a4d'
@@ -93,79 +92,110 @@ export class LogComponent implements OnInit {
                 }
             },
 
-            series: [{
-                type: 'bar',
-                name: 'error',
-                tooltip: {
-                    show: false
-                },
-                animation: false,
-                barWidth: 1.4,
-                hoverAnimation: false,
-                data: data_val,
-                itemStyle: {
-                    normal: {
-                        color: '#f17a52',
-                        opacity: 0.6,
-                        label: {
-                            show: false
-                        }
-                    }
-                }
-            }, {
-                type: 'line',
-                name: '人才资源总量',
+            series: [
+                {
+                    type: 'line',
+                    name: 'error',
+                    smooth: true,
+                    symbolSize: 10,
+                    animation: false,
+                    lineWidth: 1.2,
+                    hoverAnimation: false,
+                    data: data_val.map((x: number) => {
+                        return x + Math.floor(Math.random() * 10) * 1000;
+                    }),
+                    symbol: 'circle',
+                    itemStyle: {
+                        normal: {
+                            color: '#f17a52',
+                            shadowBlur: 40,
+                            label: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: '#f17a52',
 
-                animation: false,
-                symbol: 'circle',
-
-                hoverAnimation: false,
-                data: data_val1,
-                itemStyle: {
-                    normal: {
-                        color: '#f17a52',
-                        opacity: 0,
-                    }
-                },
-                lineStyle: {
-                    normal: {
-                        width: 1,
-                        color: '#384157',
-                        opacity: 1
-                    }
-                }
-            }, {
-                type: 'line',
-                name: 'linedemo',
-                smooth: true,
-                symbolSize: 10,
-                animation: false,
-                lineWidth: 1.2,
-                hoverAnimation: false,
-                data: data_val,
-                symbol: 'circle',
-                itemStyle: {
-                    normal: {
-                        color: '#f17a52',
-                        shadowBlur: 40,
-                        label: {
-                            show: true,
-                            position: 'top',
-                            textStyle: {
-                                color: '#f17a52',
-
+                                }
                             }
                         }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: '#f17a52',
+                            opacity: 0.08
+                        }
                     }
-                },
-                areaStyle: {
-                    normal: {
-                        color: '#f17a52',
-                        opacity: 0.08
-                    }
-                }
 
-            }]
+                },
+                {
+                    type: 'line',
+                    name: 'alert',
+                    smooth: true,
+                    symbolSize: 10,
+                    animation: false,
+                    lineWidth: 1.2,
+                    hoverAnimation: false,
+                    data: data_val.map((x: number) => {
+                        return x + 12;
+                    }),
+                    symbol: 'circle',
+                    itemStyle: {
+                        normal: {
+                            color: '#a42c13',
+                            shadowBlur: 40,
+                            label: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: '#a42c13',
+
+                                }
+                            }
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: '#a42c13',
+                            opacity: 0.08
+                        }
+                    }
+
+                },
+                {
+                    type: 'line',
+                    name: 'info',
+                    smooth: true,
+                    symbolSize: 10,
+                    animation: false,
+                    lineWidth: 1.2,
+                    hoverAnimation: false,
+                    data: data_val.map((x: number) => {
+                        return x + Math.floor(Math.random() * 10) * 1000;
+                    }),
+                    symbol: 'circle',
+                    itemStyle: {
+                        normal: {
+                            color: '#1695a4',
+                            shadowBlur: 40,
+                            label: {
+                                show: true,
+                                position: 'top',
+                                textStyle: {
+                                    color: '#1695a4',
+
+                                }
+                            }
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: '#1695a4',
+                            opacity: 0.08
+                        }
+                    }
+
+                }
+            ]
         };
         myChart.setOption(option);
     }
