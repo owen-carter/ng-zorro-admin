@@ -1,3 +1,49 @@
-<p>
-  upgrade works!
-</p>
+<nz-alert [nzType]="'success'"
+		  [nzMessage]="'当前版本V2.3.4！'"
+		  [nzDescription]="'客户：＊＊＊＊有限公司'"
+		  [nzShowIcon]="'true'">
+</nz-alert>
+
+
+<div class="split-line"></div>
+
+
+<nz-card style="width:100%;" [nzBordered]="true" class="license-input-box">
+
+	<ng-template #title>
+		系统升级
+	</ng-template>
+
+	<ng-template #extra>
+		<a></a>
+	</ng-template>
+
+	<ng-template #body>
+		
+		<p>升级指南：</p>
+		<p>1.获取升级包！</p>
+		<p>2.确认升级包版本大于当前版本！</p>
+		<p>3.上传升级包，开始升级！</p>
+		<p>3.升级大概需要三分钟，点击升级之后，请耐心等待，成功会有提示！</p>
+		<div class="split-line"></div>
+		<input type="file" style="width: 0px;height: 0px;visibility: hidden" id="upgrade-file">
+
+		<nz-tag [nzColor]="'purple'">
+			<label class="file-select-label" for="upgrade-file">选择文件</label>
+		</nz-tag>
+
+		<a href="javascript:void(0)">patent.v2.3.4.zip</a>
+
+		<div class="split-line"></div>
+		<button nz-button [nzType]="'primary'" style="float: right">
+			<span>开始升级</span>
+		</button>
+
+	</ng-template>
+
+
+</nz-card>
+
+
+
+

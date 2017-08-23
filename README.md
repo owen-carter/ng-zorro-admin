@@ -30,3 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ng g component feature/new-cmp
 
 http://www.cnblogs.com/floor/archive/2017/08/08/7302740.html
+http://www.cnblogs.com/floor/archive/2017/08/08/7302740.html
