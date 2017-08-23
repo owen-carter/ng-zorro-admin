@@ -19,16 +19,15 @@ export class LogComponent implements OnInit {
 
     ngOnInit() {
         const myChart = echarts.init(document.getElementById('log-history-analysis'));
-        console.dir(echarts);
         const data_val = [22700, 23066, 24066, 23492, 27532, 26694, 28757],
             xAxis_val = ['2010', '2011', '2012', '2013', '2014', '2015', '2016'];
         const data_val1 = [0, 0, 0, 0, 0, 0, 0];
         const option = {
-            backgroundColor: '#293042',
+            backgroundColor: '#29304200',
             grid: {
-                left: 10,
-                top: '10%',
-                bottom: 20,
+                left: 40,
+                top: 80,
+                bottom: 40,
                 right: 40,
                 containLabel: true
             },
@@ -49,11 +48,11 @@ export class LogComponent implements OnInit {
                 }
             },
             title: {
-                text: '人才资源总量',
-                x: '4.5%',
-                top: '1%',
+                text: '日志历史统计',
+                x: '4%',
+                top: 35,
                 textStyle: {
-                    color: '#fff'
+                    color: '#434a4d'
                 }
             },
             xAxis: {
@@ -64,7 +63,7 @@ export class LogComponent implements OnInit {
                 },
                 axisLabel: {
                     textStyle: {
-                        color: '#fff'
+                        color: '#434a4d'
                     }
                 },
                 axisTick: {
@@ -77,28 +76,26 @@ export class LogComponent implements OnInit {
                 },
                 axisLabel: {
                     textStyle: {
-                        color: '#fff'
+                        color: '#434a4d'
                     }
                 },
                 min: 20000,
                 splitLine: {
                     show: true,
                     lineStyle: {
-                        color: '#2e3547'
+                        color: '#d5d5d5'
                     }
                 },
                 axisLine: {
                     lineStyle: {
-                        color: '#384157'
+                        color: '#d5d5d5'
                     }
                 }
             },
 
             series: [{
                 type: 'bar',
-                name: 'linedemo',
-
-
+                name: 'error',
                 tooltip: {
                     show: false
                 },

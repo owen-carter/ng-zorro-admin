@@ -3,24 +3,30 @@
 		<div nz-col class="gutter-row" [nzSpan]="8">
 			<div class="gutter-box">
 				<!---->
-				<nz-progress [ngModel]="_ERROR" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
-				<span class="progress-label">ERROR</span>
+				<div>
+					<nz-progress [ngModel]="_ERROR" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
+					<span class="progress-label">ERROR</span>
+				</div>
 				<!---->
 			</div>
 		</div>
 		<div nz-col class="gutter-row" [nzSpan]="8">
 			<div class="gutter-box">
 				<!---->
-				<nz-progress [ngModel]="_WARN" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
-				<span class="progress-label">WARN</span>
+				<div>
+					<nz-progress [ngModel]="_WARN" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
+					<span class="progress-label">WARN</span>
+				</div>
 				<!---->
 			</div>
 		</div>
 		<div nz-col class="gutter-row" [nzSpan]="8">
 			<div class="gutter-box">
 				<!---->
-				<nz-progress [ngModel]="_FATAL" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
-				<span class="progress-label">FATAL</span>
+				<div>
+					<nz-progress [ngModel]="_FATAL" [nzFormat]="_formatLOG" [nzType]="'circle'"></nz-progress>
+					<span class="progress-label">FATAL</span>
+				</div>
 				<!---->
 			</div>
 		</div>
