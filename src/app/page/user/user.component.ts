@@ -5,6 +5,8 @@ import {
     Input,
     Output
 } from '@angular/core';
+import {UserService} from '../../service/user.service';
+// import {User} from '../../bean/user';
 
 @Component({
     selector: 'nz-user',
@@ -14,24 +16,20 @@ import {
 export class UserComponent implements OnInit {
 
     userList = [];
+    // userList = User[];
 
-    constructor() {
+    constructor(private UserService: UserService) {
 
     }
 
     ngOnInit() {
+
+        // this.userList = this.UserService.list();
         for (let i = 0; i < 46; i++) {
-            this.userList.push({
-                'key': i,
-                'name': `Edward King ${i}`,
-                'age': 32,
-                'address': `London, Park Lane no. ${i}`,
-            });
+            // this.userList.push(new User());
         }
     }
 
-    // trackByGrocery(index: number, grocery: userList): number {
-    //     return grocery.id;
-    // }
 
 }
+

@@ -8,6 +8,11 @@ import {AppComponent} from './app.component';
 
 import {RouterModule, PreloadAllModules} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
+
+// service
+import {UserService} from './service/user.service';
+
+// component
 import {DashboardComponent} from './page/dashboard/dashboard.component';
 import {UserComponent} from './page/user/user.component';
 import {RoleComponent} from './page/role/role.component';
@@ -22,8 +27,16 @@ import {AuditComponent} from './page/audit/audit.component';
 import {SystemComponent} from './page/system/system.component';
 import {SearchComponent} from './page/search/search.component';
 import {CustomerComponent} from './page/customer/customer.component';
+import {FileComponent} from './feature/file/file.component';
+
+// pipe
+import {TimestampPipe} from './pipe/timestamp.pipe';
+
 
 @NgModule({
+    providers: [
+        UserService
+    ],
     declarations: [
         AppComponent,
         DashboardComponent,
@@ -39,7 +52,9 @@ import {CustomerComponent} from './page/customer/customer.component';
         AuditComponent,
         SystemComponent,
         SearchComponent,
-        CustomerComponent
+        CustomerComponent,
+        TimestampPipe,
+        FileComponent
     ],
     imports: [
         BrowserModule,
