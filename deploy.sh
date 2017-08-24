@@ -70,7 +70,9 @@ window="dialog"
 OPTION=$(${window} --title "owen-carter deploy Menu Dialog" --menu "Choose your event" 10 40 9 \
 "0" "init the environment" \
 "1" "deploy the app again" \
-"2" "exit"  3>&1 1>&2 2>&3)
+"2" "install Nginx" \
+"3" "install Dependencies" \
+"4" "exit"  3>&1 1>&2 2>&3)
 
 exitStatus=$?
 if [ ${exitStatus} = 0 ]; then
