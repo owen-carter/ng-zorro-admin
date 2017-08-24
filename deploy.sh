@@ -67,7 +67,7 @@ function deployApp(){
 cmdList=( "initEnvironment" "deployApp" "installNginx" "installDependencies" "exit" )
 window="whiptail"
 window="dialog"
-OPTION=$(${window} --title "owen-carter deploy Menu Dialog" --menu "Choose your event" 10 40 9 \
+OPTION=$(${window} --title "owen-carter deploy Menu Dialog" --menu "Choose your event" 15 40 12 \
 "0" "init the environment" \
 "1" "deploy the app again" \
 "2" "install Nginx" \
