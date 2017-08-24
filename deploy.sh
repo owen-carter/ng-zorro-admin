@@ -40,9 +40,19 @@ function initEnvironment(){
     deployApp
 }
 
+function installNginx(){
+
+}
+
+
+function installDependencies(){
+
+}
+
 
 function deployApp(){
     git pull origin master
+    cnpm install
     npm run build
     rm -rf ${publishPath}
     cp  -R -f -v ./dist/* ${publishPath}

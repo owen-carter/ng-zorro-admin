@@ -31,3 +31,20 @@ ng g component feature/new-cmp
 
 http://www.cnblogs.com/floor/archive/2017/08/08/7302740.html
 http://www.cnblogs.com/floor/archive/2017/08/08/7302740.html
+
+https://themes.getbootstrap.com/products/dashboard
+这个面板不错
+可以考虑使用react 实现
+
+http://overtrue.me/bootstrap-theme-slim/#
+这个主题不错
+
+
+https://github.com/project-store/theme 
+主题仓库
+
+
+https://github.com/Ziv-Barber/officegen
+生成doc文件 xlxs pdf ppt
+https://github.com/mgcrea/node-xlsx
+
