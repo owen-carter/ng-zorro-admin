@@ -55,7 +55,7 @@ function deployApp(){
     cnpm install
     npm run build
     rm -rf ${publishPath}
-    cp  -R -f -v ./dist/* ${publishPath}
+    cp  -R -f -v ./dist ${publishPath}
     systemctl restart nginx.service
 }
 
