@@ -41,7 +41,11 @@ function initEnvironment(){
 }
 
 function installNginx(){
-    echo ""
+    echo "start install nginx..."
+    yum -y install nginx
+    service nginx start
+    curl 127.0.0.1
+    cat -n /etc/nginx/conf.d/default.conf
 }
 
 
@@ -60,7 +64,7 @@ function deployApp(){
 }
 
 
-cmdList=( "initEnvironment" "deployApp" "exit" )
+cmdList=( "initEnvironment" "deployApp" "installNginx" "installDependencies" "exit" )
 window="whiptail"
 window="dialog"
 OPTION=$(${window} --title "owen-carter deploy Menu Dialog" --menu "Choose your event" 10 40 9 \
