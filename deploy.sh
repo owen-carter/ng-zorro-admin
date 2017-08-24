@@ -41,12 +41,12 @@ function initEnvironment(){
 }
 
 function installNginx(){
-
+    echo ""
 }
 
 
 function installDependencies(){
-
+    echo ""
 }
 
 
