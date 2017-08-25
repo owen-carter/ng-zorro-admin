@@ -61,7 +61,7 @@ function deployApp(){
     rm -rf ${publishPath}"**"
     cp  -R -f -v ./dist/* ${publishPath}
     systemctl restart nginx.service
-    if [[ $? ==0 ]];
+    if [[ $? == 0 ]];
     then
         echo "restart nginx success"
     fi
