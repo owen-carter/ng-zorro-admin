@@ -6,7 +6,7 @@
 appName="ng-zorro-admin"
 repoUrl="https://github.com/owen-carter/ng-zorro-admin.git"
 localRepoPath='~/workspace/'
-publishPath="/usr/share/nginx/html/${appName}"
+publishPath="/usr/share/nginx/html/"
 
 function initEnvironment(){
     echo "=======install node========"
