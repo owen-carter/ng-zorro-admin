@@ -58,8 +58,8 @@ function deployApp(){
     git pull origin master
     cnpm install
     npm run build
-    rm -rf ${publishPath}
-    cp  -R -f -v ./dist ${publishPath}
+    rm -rf ${publishPath}"**"
+    cp  -R -f -v ./dist/* ${publishPath}
     systemctl restart nginx.service
 }
 
