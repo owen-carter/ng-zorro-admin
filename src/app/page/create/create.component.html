@@ -1,3 +1,201 @@
-<p>
-  create works!
-</p>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event,validateForm.value)">
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>项目名称</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('projectName')" nzHasFeedback>
+			<nz-input formControlName="projectName"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'可以使用客户的专利名称，进行命名'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('projectName').dirty&&getFormControl('projectName').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('projectName').dirty&&getFormControl('projectName').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('projectName').dirty&&getFormControl('projectName').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>专利名</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('patentName')" nzHasFeedback>
+			<nz-input formControlName="patentName"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'客户的专利名称'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('patentName').dirty&&getFormControl('patentName').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('patentName').dirty&&getFormControl('patentName').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('patentName').dirty&&getFormControl('patentName').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>负责人</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('responder')" nzHasFeedback>
+			<nz-input formControlName="responder"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'客户的专利的实际负责人'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('responder').dirty&&getFormControl('responder').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('responder').dirty&&getFormControl('responder').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('responder').dirty&&getFormControl('responder').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>代理人</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('agent')" nzHasFeedback>
+			<nz-input formControlName="agent"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'客户的专利的对公代理人'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('agent').dirty&&getFormControl('agent').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('agent').dirty&&getFormControl('agent').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('agent').dirty&&getFormControl('agent').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>客户</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('customer')" nzHasFeedback>
+			<nz-input formControlName="customer"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'客户名称'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('customer').dirty&&getFormControl('customer').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('customer').dirty&&getFormControl('customer').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('customer').dirty&&getFormControl('customer').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>发明人</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('inventor')" nzHasFeedback>
+			<nz-input formControlName="inventor"
+					  [nzType]="'text'"
+					  [nzPlaceHolder]="'发明人'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('inventor').dirty&&getFormControl('inventor').hasError('required')">
+				Please input your username!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('inventor').dirty&&getFormControl('inventor').hasError('duplicated')">
+				The username is redundant!
+			</div>
+			<div nz-form-explain *ngIf="getFormControl('inventor').dirty&&getFormControl('inventor').pending">
+				Validating...
+			</div>
+		</div>
+	</div>
+
+
+	<div nz-form-item nz-row>
+		<div nz-form-label nz-col [nzSpan]="7">
+			<label nz-form-item-required>创建日期</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('createTime')">
+			<nz-datepicker formControlName="createTime"
+						   [nzSize]="'large'"
+						   [nzPlaceHolder]="'项目创建日期'"
+						   style="width: 100%;"></nz-datepicker>
+			<div nz-form-explain
+				 *ngIf="getFormControl('createTime').dirty&&getFormControl('createTime').hasError('required')">
+				Please input your birthday!
+			</div>
+			<div nz-form-explain
+				 *ngIf="getFormControl('createTime').dirty&&getFormControl('createTime').hasError('expired')">
+				Birthday must less than today!
+			</div>
+		</div>
+	</div>
+
+
+	<div nz-form-item nz-row>
+		<div nz-col [nzSpan]="7" nz-form-label>
+			<label nz-form-item-required>备注</label>
+		</div>
+		<div nz-col [nzSpan]="12" nz-form-control [nzValidateStatus]="getFormControl('comment')">
+			<nz-input formControlName="comment" [nzRows]="2" [nzType]="'textarea'" [nzPlaceHolder]="'备注'"
+					  [nzSize]="'large'">
+			</nz-input>
+			<div nz-form-explain
+				 *ngIf="getFormControl('comment').dirty&&getFormControl('comment').hasError('required')">
+				Please write something here!
+			</div>
+		</div>
+	</div>
+
+	<div nz-form-item nz-row>
+		<div nz-col [nzOffset]="7" [nzSpan]="12" nz-form-control>
+			<button nz-button
+					[nzType]="'primary'"
+					[nzSize]="'large'"
+					[disabled]="!validateForm.valid">
+				保存
+			</button>
+			<button nz-button
+					[nzSize]="'large'"
+					(click)="resetForm($event)">重置
+			</button>
+		</div>
+	</div>
+
+</form>

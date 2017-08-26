@@ -6,7 +6,9 @@ import {
     Output
 } from '@angular/core';
 import {UserService} from '../../service/user.service';
-// import {User} from '../../bean/user';
+import {User} from '../../bean/user';
+import {Msg} from '../../bean/msg';
+import {NzMessageService} from 'ng-zorro-antd';
 
 @Component({
     selector: 'nz-user',
@@ -16,18 +18,52 @@ import {UserService} from '../../service/user.service';
 export class UserComponent implements OnInit {
 
     userList = [];
-    // userList = User[];
+    user = {};
+    query = {};
+    _value = '';
 
-    constructor(private UserService: UserService) {
-
+    constructor(private userService: UserService, private _message: NzMessageService) {
     }
 
     ngOnInit() {
+        this.getUserList({});
+        this._message.info('这是一条普通的提醒');
+    }
 
-        // this.userList = this.UserService.list();
-        for (let i = 0; i < 46; i++) {
-            // this.userList.push(new User());
+    getUserList(query: object): void {
+        this.userService.list(query)
+            .then(result => {
+                this.userList = result;
+            });
+    }
+
+    createUser(name: string): void {
+        name = name.trim();
+        if (!name) {
+            return;
         }
+        this.userService.create(name)
+            .then(hero => {
+                this.userList.push(hero);
+                this.user = null;
+            });
+    }
+
+    queryUser(id: string): void {
+        this.userService.query(id)
+            .then(hero => {
+                this.userList.push(hero);
+                this.user = null;
+            });
+    }
+
+    removeUser(id: string): void {
+        this.userService.remove(id)
+            .then(result => {
+                if (result['status']) {
+                    this._message.info('这是一条普通的提醒');
+                }
+            });
     }
 
 

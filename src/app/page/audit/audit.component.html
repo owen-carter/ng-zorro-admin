@@ -1,3 +1,58 @@
-<p>
-  audit works!
-</p>
+<div class="gutter-example" style="margin-bottom: 20px">
+	<div nz-row [nzGutter]="8">
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="4">
+			<div class="gutter-box"></div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="8" style="text-align: right">
+			<div class="gutter-box">
+				<button nz-button [nzType]="'primary'" style="width: 100px;">
+					<i class="anticon anticon-user-add"></i><span>导出日志</span>
+				</button>
+			</div>
+		</div>
+		<div nz-col class="gutter-row" [nzSpan]="6">
+			<div class="gutter-box" style="text-align: right">
+				<nz-input [nzType]="'search'"
+						  [nzPlaceHolder]="'请输入用户名进行搜索'"
+						  [(ngModel)]="_value"
+						  style="width: 100%;">
+				</nz-input>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nz-table #nzTable [nzDataSource]="auditList" [nzPageSize]="10" [nzShowSizeChanger]="true" nzCheckbox="true">
+	<thead nz-thead>
+	<tr>
+		<th nz-th><span>序号</span></th>
+		<th nz-th><span>用户名</span></th>
+		<th nz-th><span>时间</span></th>
+		<th nz-th><span>模块</span></th>
+		<th nz-th><span>操作</span></th>
+		<th nz-th><span>结果</span></th>
+		<th nz-th style="text-align: right">
+			<span>操作</span>
+		</th>
+	</tr>
+	</thead>
+	<tbody nz-tbody>
+	<tr nz-tbody-tr *ngFor="let data of nzTable.data; let idx = index;">
+		<td nz-td>
+			<a>{{idx+1}}</a>
+		</td>
+		<td nz-td>
+			<a>{{data.name}}</a>
+		</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.age}}</td>
+		<td nz-td>{{data.address}}</td>
+		<td nz-td>{{data.address}}</td>
+		<td nz-td>{{data.age}}</td>
+	</tr>
+	</tbody>
+</nz-table>

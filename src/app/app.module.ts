@@ -27,11 +27,15 @@ import {AuditComponent} from './page/audit/audit.component';
 import {SystemComponent} from './page/system/system.component';
 import {SearchComponent} from './page/search/search.component';
 import {CustomerComponent} from './page/customer/customer.component';
+import {CreateComponent} from './page/create/create.component';
+import {TrackComponent} from './page/track/track.component';
+import {ManageComponent} from './page/manage/manage.component';
+
+// feature
 import {FileComponent} from './feature/file/file.component';
 
 // pipe
 import {TimestampPipe} from './pipe/timestamp.pipe';
-
 
 @NgModule({
     providers: [
@@ -54,7 +58,10 @@ import {TimestampPipe} from './pipe/timestamp.pipe';
         SearchComponent,
         CustomerComponent,
         TimestampPipe,
-        FileComponent
+        FileComponent,
+        CreateComponent,
+        TrackComponent,
+        ManageComponent
     ],
     imports: [
         BrowserModule,

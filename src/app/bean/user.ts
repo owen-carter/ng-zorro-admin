@@ -1,12 +1,10 @@
+/***
+ * 用户数据类
+ */
 export class User {
     id: number;
-    name: String;
+    name: string;
     date: number;
     totalTime: number;
-    comment: String;
-
-    constructor() {
-
-    }
-
+    comment: string;
 }
