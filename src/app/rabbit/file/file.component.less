@@ -1,0 +1,31 @@
+@import "../global.less";
+
+
+.rabbit-file-component {
+  .@{rabbit-prefix}-file-input {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
+  .@{rabbit-prefix}-file-label {
+    display: inline-block;
+    border-radius: 2px;
+    background: steelblue;
+    height: 24px;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 2px 10px;
+    box-shadow: 0px 0px 2px steelblue;
+    &:hover{
+      background: lighter(steelblue);
+      box-shadow: 0px 0px 3px steelblue;
+    }
+  }
+  .@{rabbit-prefix}-file-name{
+    text-decoration-line: underline;
+    font-style: italic;
+  }
+}
+
+
+

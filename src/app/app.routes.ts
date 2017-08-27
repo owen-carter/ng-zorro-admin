@@ -2,6 +2,7 @@
  * 路由文件
  */
 import {Routes} from '@angular/router';
+// Component
 import {DashboardComponent} from './page/dashboard/dashboard.component';
 import {UserComponent} from './page/user/user.component';
 import {RoleComponent} from './page/role/role.component';
@@ -19,6 +20,7 @@ import {CustomerComponent} from './page/customer/customer.component';
 import {CreateComponent} from './page/create/create.component';
 import {TrackComponent} from './page/track/track.component';
 import {ManageComponent} from './page/manage/manage.component';
+import {TestComponent} from './page/test/test.component';
 
 export const routes: Routes = [
     {path: '', component: DashboardComponent},
@@ -38,6 +40,8 @@ export const routes: Routes = [
     {path: 'project.create', component: CreateComponent},
     {path: 'project.track', component: TrackComponent},
     {path: 'project.manage', component: ManageComponent},
-    {path: 'configure', component: ConfigureComponent}
+    {path: 'configure', component: ConfigureComponent},
+    {path: 'test', component: TestComponent}
+
     // { path: '**', component: PageNotFoundComponent }
 ];
