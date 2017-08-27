@@ -21,13 +21,19 @@ import {CreateComponent} from './page/create/create.component';
 import {TrackComponent} from './page/track/track.component';
 import {ManageComponent} from './page/manage/manage.component';
 import {TestComponent} from './page/test/test.component';
+import {UserEditComponent} from './page/user/children/user-edit/user-edit.component';
 
 export const routes: Routes = [
     {path: '', component: DashboardComponent},
     {path: 'dashboard', component: DashboardComponent},
+
     {path: 'user', component: UserComponent},
+    {path: 'user.edit/:id', component: UserEditComponent},
+
     {path: 'role', component: RoleComponent},
+
     {path: 'permission', component: PermissionComponent},
+
     {path: 'setting', component: SettingComponent},
     {path: 'upgrade', component: UpgradeComponent},
     {path: 'backup', component: BackupComponent},

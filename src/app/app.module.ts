@@ -40,6 +40,7 @@ import {TestComponent} from './page/test/test.component';
 
 // pipe
 import {TimestampPipe} from './pipe/timestamp.pipe';
+import {UserEditComponent} from './page/user/children/user-edit/user-edit.component';
 
 @NgModule({
     providers: [
@@ -65,7 +66,8 @@ import {TimestampPipe} from './pipe/timestamp.pipe';
         CreateComponent,
         TrackComponent,
         ManageComponent,
-        TestComponent
+        TestComponent,
+        UserEditComponent
     ],
     imports: [
         BrowserModule,

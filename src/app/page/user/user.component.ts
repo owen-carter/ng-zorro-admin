@@ -26,43 +26,26 @@ export class UserComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getUserList({});
-        this.createUser('jft')
+        this.getUserList(this.query);
     }
 
     getUserList(query: object): void {
         this.userService.list(query)
-            .then(result => {
-                this.userList = result;
+            .then(response => {
+                console.dir(response);
+                this.userList = response.results;
                 this._message.info('获取用户列表成功！');
             });
     }
 
-    createUser(name: string): void {
-        name = name.trim();
-        if (!name) {
-            return;
-        }
-        this.userService.create(name)
-            .then(hero => {
-                this.userList.push(hero);
-                this.user = null;
-            });
-    }
 
-    queryUser(id: string): void {
-        this.userService.query(id)
-            .then(hero => {
-                this.userList.push(hero);
-                this.user = null;
-            });
-    }
 
     removeUser(id: string): void {
         this.userService.remove(id)
-            .then(result => {
-                if (result['status']) {
-                    this._message.info('这是一条普通的提醒');
+            .then(response => {
+                if (response['status']) {
+                    this._message.info(response['message']);
+                    this.getUserList(this.query);
                 }
             });
     }

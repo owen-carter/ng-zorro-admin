@@ -93,7 +93,7 @@
 			</nz-popover>
 
 			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
-				<button nz-button [nzType]="'danger'" [nzShape]="'circle'" nz-popover>
+                <button nz-button [nzType]="'danger'" [nzShape]="'circle'" nz-popover (click)="removeUser(data._id)">
 					<i class="anticon anticon-close"></i>
 				</button>
 				<ng-template #nzTemplate>

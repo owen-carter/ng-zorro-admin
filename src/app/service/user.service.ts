@@ -28,7 +28,7 @@ export class UserService {
         const url = `${this.userUrl}/list?${param}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response.json().data as User[])
+            .then(response => response.json())
             .catch(this.handleError);
     }
 
@@ -36,7 +36,7 @@ export class UserService {
         const url = `${this.userUrl}/${id}`;
         return this.http.get(url)
             .toPromise()
-            .then(response => response.json().data as User)
+            .then(response => response.json())
             .catch(this.handleError);
     }
 
@@ -45,7 +45,7 @@ export class UserService {
         return this.http
             .post(url, JSON.stringify({name: name}), {headers: this.headers})
             .toPromise()
-            .then(res => res.json().data as User)
+            .then(res => res.json())
             .catch(this.handleError);
     }
 
@@ -54,7 +54,7 @@ export class UserService {
         return this.http
             .post(url, JSON.stringify({id: id}), {headers: this.headers})
             .toPromise()
-            .then(res => res.json().data as Msg)
+            .then(res => res.json())
             .catch(this.handleError);
     }
 
