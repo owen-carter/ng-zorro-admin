@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --target=production --environment=prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "github": "ng github-pages:deploy --message 'Optional commit message'",

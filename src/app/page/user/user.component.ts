@@ -27,13 +27,14 @@ export class UserComponent implements OnInit {
 
     ngOnInit() {
         this.getUserList({});
-        this._message.info('这是一条普通的提醒');
+        this.createUser('jft')
     }
 
     getUserList(query: object): void {
         this.userService.list(query)
             .then(result => {
                 this.userList = result;
+                this._message.info('获取用户列表成功！');
             });
     }
 
