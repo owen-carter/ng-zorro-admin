@@ -5,7 +5,10 @@ export class Msg {
     status: boolean;
     message: string;
     result: object;
+    results: object[];
     user: object;
-    configure: object;
+    userConfig: object;
+    sysConfig: object;
+    sysDictionary: object;
 }
 

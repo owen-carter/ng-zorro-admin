@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../../../service/user.service';
 import {NzMessageService} from 'ng-zorro-antd';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
     selector: 'nz-user-edit',
@@ -8,15 +9,19 @@ import {NzMessageService} from 'ng-zorro-antd';
     styleUrls: ['./user-edit.component.less']
 })
 export class UserEditComponent implements OnInit {
-    user = {};
     _id = '';
+    user = {};
 
-
-    constructor(private userService: UserService, private _message: NzMessageService) {
+    constructor(private userService: UserService, private _message: NzMessageService, private router: Router, private route: ActivatedRoute) {
+        this.route.params.subscribe((params) => {
+            console.dir(params);
+            this._id = params['id'] || '';
+        })
     }
 
 
-    ngOnInit() {
+    ngOnInit(): void {
+        this.queryUser(this._id)
     }
 
 
@@ -34,7 +39,12 @@ export class UserEditComponent implements OnInit {
     queryUser(id: string): void {
         this.userService.query(id)
             .then(response => {
-                this.user = null;
+                if (response.status) {
+                    this._message.info(response.message);
+                    this.user = response.result;
+                } else {
+                    this._message.error(response.message);
+                }
             });
     }
 }

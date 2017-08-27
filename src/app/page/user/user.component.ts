@@ -39,7 +39,6 @@ export class UserComponent implements OnInit {
     }
 
 
-
     removeUser(id: string): void {
         this.userService.remove(id)
             .then(response => {

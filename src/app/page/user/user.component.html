@@ -53,22 +53,23 @@
 			<a>{{idx+1}}</a>
 		</td>
 		<td nz-td>
-			<a>{{data.name}}</a>
+            <a>{{data.account}}</a>
 		</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
-		<td nz-td>{{data.age}}</td>
+        <td nz-td>{{data.jobSeries}}</td>
+        <td nz-td>{{data.workTitle}}</td>
+        <td nz-td>{{data.userName}}</td>
+        <td nz-td>{{data.department}}</td>
+        <td nz-td>{{data.role}}</td>
+        <td nz-td>{{data.status}}</td>
+        <td nz-td>{{data.createTime}}</td>
+        <td nz-td>{{data.lastLoginTime}}</td>
+        <td nz-td>{{data.loginTimes}}</td>
 		<td nz-td>{{data.address}}</td>
 		<td nz-td style="text-align: right">
 			<!--btn-->
 			<nz-popover [nzTitle]="'温馨提示'" [nzPlacement]="'bottom'">
-				<button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-popover>
+                <button nz-button [nzType]="'primary'" [nzShape]="'circle'" nz-popover
+                        [routerLink]="['/user.edit',data._id]">
 					<i class="anticon anticon-edit"></i>
 				</button>
 				<ng-template #nzTemplate>

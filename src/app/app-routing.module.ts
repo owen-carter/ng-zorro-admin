@@ -9,7 +9,7 @@ import {routes} from './app.routes';
 @NgModule({
     imports: [
         RouterModule.forRoot(routes, {
-            enableTracing: true,
+            enableTracing: false,
             useHash: true,
             preloadingStrategy: PreloadAllModules
         })
