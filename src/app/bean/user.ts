@@ -7,4 +7,5 @@ export class User {
     date: number;
     totalTime: number;
     comment: string;
+    checked: boolean;
 }

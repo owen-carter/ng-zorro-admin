@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Headers, Http} from '@angular/http';
 import {User} from '../bean/user';
 import {Msg} from '../bean/msg';
+import * as qs from 'querystring';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -12,6 +13,7 @@ export class UserService {
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) {
+        console.dir(qs)
     }
 
     /***
@@ -25,7 +27,7 @@ export class UserService {
     }
 
     list(param: object): Promise<Msg> {
-        const url = `${this.userUrl}/list?${param}`;
+        const url = `${this.userUrl}/list?${qs.stringify(param)}`;
         return this.http.get(url)
             .toPromise()
             .then(response => response.json())
@@ -49,10 +51,10 @@ export class UserService {
             .catch(this.handleError);
     }
 
-    remove(id: string): Promise<Msg> {
+    remove(userList: User[]): Promise<Msg> {
         const url = `${this.userUrl}/remove`;
         return this.http
-            .post(url, JSON.stringify({id: id}), {headers: this.headers})
+            .post(url, JSON.stringify({data: userList}), {headers: this.headers})
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);

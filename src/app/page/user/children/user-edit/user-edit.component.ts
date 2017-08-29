@@ -21,11 +21,14 @@ export class UserEditComponent implements OnInit {
 
 
     ngOnInit(): void {
-        this.queryUser(this._id)
+        if (this._id !== '') {
+            this.queryUser(this._id)
+        }
+        this.saveUser('uuu')
     }
 
 
-    createUser(name: string): void {
+    saveUser(name: string): void {
         name = name.trim();
         if (!name) {
             return;
@@ -41,6 +44,7 @@ export class UserEditComponent implements OnInit {
             .then(response => {
                 if (response.status) {
                     this._message.info(response.message);
+                    // recover sense
                     this.user = response.result;
                 } else {
                     this._message.error(response.message);
