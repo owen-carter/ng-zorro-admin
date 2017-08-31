@@ -7,7 +7,7 @@ import {HttpModule} from '@angular/http';
 
 // module
 import {NgZorroAntdModule} from 'ng-zorro-antd';
-import {RabbitModule} from "./rabbit/rabbit.module";
+import {RabbitModule} from './rabbit/rabbit.module';
 // root component
 import {AppComponent} from './app.component';
 // route module
@@ -41,9 +41,10 @@ import {TestComponent} from './page/test/test.component';
 // pipe
 import {TimestampPipe} from './pipe/timestamp.pipe';
 import {UserEditComponent} from './page/user/children/user-edit/user-edit.component';
+import {ZoomDirective} from './directive/zoom.directive';
 
 @NgModule({
-    providers: [
+    providers   : [
         UserService
     ],
     declarations: [
@@ -67,9 +68,10 @@ import {UserEditComponent} from './page/user/children/user-edit/user-edit.compon
         TrackComponent,
         ManageComponent,
         TestComponent,
-        UserEditComponent
+        UserEditComponent,
+        ZoomDirective
     ],
-    imports: [
+    imports     : [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
@@ -79,7 +81,7 @@ import {UserEditComponent} from './page/user/children/user-edit/user-edit.compon
         RabbitModule,
         AppRoutingModule
     ],
-    bootstrap: [AppComponent]
+    bootstrap   : [AppComponent]
 })
 export class AppModule {
 }
