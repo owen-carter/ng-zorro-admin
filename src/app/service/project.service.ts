@@ -42,10 +42,10 @@ export class ProjectService {
             .catch(this.handleError);
     }
 
-    create(name: string): Promise<Msg> {
+    create(projectInfo: object): Promise<Msg> {
         const url = `${this.projectUrl}/create`;
         return this.http
-            .post(url, JSON.stringify({name: name}), {headers: this.headers})
+            .post(url, JSON.stringify({data: projectInfo}), {headers: this.headers})
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
@@ -59,5 +59,4 @@ export class ProjectService {
             .then(res => res.json())
             .catch(this.handleError);
     }
-    
 }

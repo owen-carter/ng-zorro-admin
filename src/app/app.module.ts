@@ -1,51 +1,48 @@
 // core
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-
+import {BrowserModule} from "@angular/platform-browser";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {NgModule} from "@angular/core";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
 // module
-import {NgZorroAntdModule} from 'ng-zorro-antd';
-import {RabbitModule} from './rabbit/rabbit.module';
+import {NgZorroAntdModule} from "ng-zorro-antd";
+import {RabbitModule} from "./rabbit/rabbit.module";
 // root component
-import {AppComponent} from './app.component';
+import {AppComponent} from "./app.component";
 // route module
-import {AppRoutingModule} from './app-routing.module';
-
+import {AppRoutingModule} from "./app-routing.module";
 // service
-import {UserService} from './service/user.service';
-
+import {UserService} from "./service/user.service";
+import {ProjectService} from "./service/project.service";
 // component
-import {DashboardComponent} from './page/dashboard/dashboard.component';
-import {UserComponent} from './page/user/user.component';
-import {RoleComponent} from './page/role/role.component';
-import {PermissionComponent} from './page/permission/permission.component';
-import {ConfigureComponent} from './page/configure/configure.component';
-import {SettingComponent} from './page/setting/setting.component';
-import {UpgradeComponent} from './page/upgrade/upgrade.component';
-import {BackupComponent} from './page/backup/backup.component';
-import {LicenseComponent} from './page/license/license.component';
-import {LogComponent} from './page/log/log.component';
-import {AuditComponent} from './page/audit/audit.component';
-import {SystemComponent} from './page/system/system.component';
-import {SearchComponent} from './page/search/search.component';
-import {CustomerComponent} from './page/customer/customer.component';
-import {CreateComponent} from './page/create/create.component';
-import {TrackComponent} from './page/track/track.component';
-import {ManageComponent} from './page/manage/manage.component';
-import {TestComponent} from './page/test/test.component';
-
+import {DashboardComponent} from "./page/dashboard/dashboard.component";
+import {UserComponent} from "./page/user/user.component";
+import {RoleComponent} from "./page/role/role.component";
+import {PermissionComponent} from "./page/permission/permission.component";
+import {ConfigureComponent} from "./page/configure/configure.component";
+import {SettingComponent} from "./page/setting/setting.component";
+import {UpgradeComponent} from "./page/upgrade/upgrade.component";
+import {BackupComponent} from "./page/backup/backup.component";
+import {LicenseComponent} from "./page/license/license.component";
+import {LogComponent} from "./page/log/log.component";
+import {AuditComponent} from "./page/audit/audit.component";
+import {SystemComponent} from "./page/system/system.component";
+import {SearchComponent} from "./page/search/search.component";
+import {CustomerComponent} from "./page/customer/customer.component";
+import {CreateComponent} from "./page/create/create.component";
+import {TrackComponent} from "./page/track/track.component";
+import {ManageComponent} from "./page/manage/manage.component";
+import {TestComponent} from "./page/test/test.component";
 // feature
-
 // pipe
-import {TimestampPipe} from './pipe/timestamp.pipe';
-import {UserEditComponent} from './page/user/children/user-edit/user-edit.component';
-import {ZoomDirective} from './directive/zoom.directive';
+import {TimestampPipe} from "./pipe/timestamp.pipe";
+import {UserEditComponent} from "./page/user/children/user-edit/user-edit.component";
+import {ZoomDirective} from "./directive/zoom.directive";
 
 @NgModule({
     providers   : [
-        UserService
+        UserService,
+        ProjectService
     ],
     declarations: [
         AppComponent,

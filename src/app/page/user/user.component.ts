@@ -1,38 +1,31 @@
-import {
-    Component,
-    EventEmitter,
-    OnInit,
-    Input,
-    Output
-} from '@angular/core';
-import {UserService} from '../../service/user.service';
-import {User} from '../../bean/user';
-import {Msg} from '../../bean/msg';
-import {NzMessageService} from 'ng-zorro-antd';
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {UserService} from "../../service/user.service";
+import {User} from "../../bean/user";
+import {NzMessageService} from "ng-zorro-antd";
 
 @Component({
-    selector: 'nz-user',
+    selector   : 'nz-user',
     templateUrl: './user.component.html',
-    styleUrls: ['./user.component.less']
+    styleUrls  : ['./user.component.less']
 })
 export class UserComponent implements OnInit {
 
     userList = [];
-    user = {};
-    query = {};
-    keyword = '';
+    user     = {};
+    query    = {};
+    keyword  = '';
 
-    _current = 1;
-    _total = 1;
-    _loading = true;
+    _current  = 1;
+    _total    = 1;
+    _loading  = true;
     _pageSize = 10;
 
 
-    _allChecked = false;
-    _disabledButton = true;
-    _checkedNumber = 0;
+    _allChecked              = false;
+    _disabledButton          = true;
+    _checkedNumber           = 0;
     _displayData: Array<any> = [];
-    _indeterminate = false;
+    _indeterminate           = false;
 
 
     constructor(private userService: UserService, private _message: NzMessageService) {
@@ -40,8 +33,8 @@ export class UserComponent implements OnInit {
 
     ngOnInit() {
         this.query = {
-            page: this._current,
-            size: this._pageSize,
+            page   : this._current,
+            size   : this._pageSize,
             keyword: this.keyword
         };
         this.getUserList(this.query);
@@ -52,7 +45,7 @@ export class UserComponent implements OnInit {
         this.userService.list(query)
             .then(response => {
                 this._loading = false;
-                this._total = 200;
+                this._total   = 200;
                 this.userList = response.results;
                 this._message.info('获取用户列表成功！');
             });
@@ -82,11 +75,11 @@ export class UserComponent implements OnInit {
 
     _refreshStatus() {
         // check is all check?
-        const allChecked = this._displayData.every(value => value.checked === true);
+        const allChecked    = this._displayData.every(value => value.checked === true);
         // check all uncheck?
-        const allUnChecked = this._displayData.every(value => !value.checked);
+        const allUnChecked  = this._displayData.every(value => !value.checked);
         // set
-        this._allChecked = allChecked;
+        this._allChecked    = allChecked;
         //
         this._indeterminate = (!allChecked) && (!allUnChecked);
     };

@@ -1,4 +1,4 @@
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event,validateForm.value)">
+<form #f nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event,validateForm.value)">
 
 	<div nz-form-item nz-row>
 		<div nz-form-label nz-col [nzSpan]="7">
