@@ -51,6 +51,16 @@ export class ProjectService {
             .catch(this.handleError);
     }
 
+    // upload file
+    upload(projectInfo: object): Promise<Msg> {
+        const url = `${this.projectUrl}/upload`;
+        return this.http
+            .post(url, JSON.stringify({data: projectInfo}), {headers: new Headers({'Content-Type': 'multipart/form-data'})})
+            .toPromise()
+            .then(res => res.json())
+            .catch(this.handleError);
+    }
+
     remove(projectList: Project[]): Promise<Msg> {
         const url = `${this.projectUrl}/remove`;
         return this.http
