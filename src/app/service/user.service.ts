@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Headers, Http} from '@angular/http';
-import {User} from '../bean/user';
-import {Msg} from '../bean/msg';
-import * as qs from 'querystring';
+import {Injectable} from "@angular/core";
+import {Headers, Http} from "@angular/http";
+import {User} from "../bean/user";
+import {Msg} from "../bean/msg";
+import * as qs from "querystring";
 
-import 'rxjs/add/operator/toPromise';
+import "rxjs/add/operator/toPromise";
 
 
 @Injectable()
@@ -13,7 +13,6 @@ export class UserService {
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(private http: Http) {
-        console.dir(qs)
     }
 
     /***
