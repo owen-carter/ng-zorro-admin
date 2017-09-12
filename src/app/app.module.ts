@@ -38,6 +38,11 @@ import {TestComponent} from "./page/test/test.component";
 import {TimestampPipe} from "./pipe/timestamp.pipe";
 import {UserEditComponent} from "./page/user/children/user-edit/user-edit.component";
 import {ZoomDirective} from "./directive/zoom.directive";
+import {ProjectComponent} from "./page/project/project.component";
+import {ProjectImportComponent} from "./page/project/children/project-import/project-import.component";
+import {ProjectEditComponent} from "./page/project/children/project-edit/project-edit.component";
+import {RoleEditComponent} from "./page/role/children/role-edit/role-edit.component";
+import {CustomerEditComponent} from "./page/customer/children/customer-edit/customer-edit.component";
 
 @NgModule({
     providers   : [
@@ -66,7 +71,12 @@ import {ZoomDirective} from "./directive/zoom.directive";
         ManageComponent,
         TestComponent,
         UserEditComponent,
-        ZoomDirective
+        ZoomDirective,
+        ProjectComponent,
+        ProjectImportComponent,
+        ProjectEditComponent,
+        RoleEditComponent,
+        CustomerEditComponent,
     ],
     imports     : [
         BrowserModule,
