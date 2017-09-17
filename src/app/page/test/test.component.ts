@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ProjectService} from "../../service/project.service";
 
 @Component({
     selector: 'nz-test',
@@ -7,10 +8,26 @@ import {Component, OnInit} from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-    constructor() {
+    constructor(public projectService: ProjectService) {
     }
 
     ngOnInit() {
+        let ele = document.getElementById('file-sel')
+        ele.addEventListener('change', (e) => {
+            console.dir(e)
+        })
     }
+
+    upload() {
+        let ele: any = document.getElementById('file-sel')
+        let fileList = ele.files;
+        console.dir(ele)
+        let formdata: FormData = new FormData();
+        formdata.append('files', fileList)
+        this.projectService.upload(formdata).then((response) => {
+            console.dir(response)
+        })
+    }
+
 
 }

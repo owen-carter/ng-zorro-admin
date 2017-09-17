@@ -10,7 +10,7 @@ import "rxjs/add/operator/toPromise";
 @Injectable()
 export class ProjectService {
     private projectUrl = 'api/project';
-    private headers    = new Headers({'Content-Type': 'application/json'});
+    private headers = new Headers({'Content-Type': 'application/json'});
 
 
     constructor(private http: Http) {
@@ -55,7 +55,7 @@ export class ProjectService {
     upload(projectInfo: object): Promise<Msg> {
         const url = `${this.projectUrl}/upload`;
         return this.http
-            .post(url, JSON.stringify({data: projectInfo}), {headers: new Headers({'Content-Type': 'multipart/form-data'})})
+            .post(url, projectInfo)
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
