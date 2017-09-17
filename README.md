@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         - Before running the tests make sure you are serving the app via `ng serve`.
 
 ### ??
-
+![brand](./images/dashboard.png)
 
 
 
