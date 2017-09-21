@@ -8,6 +8,7 @@ cache:
 branches:
   only:
   - dev
+  - master
 env:
   global:
   - GH_REF: github.com/owen-carter/ng-zorro-admin.git
