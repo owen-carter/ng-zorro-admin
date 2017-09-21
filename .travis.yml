@@ -10,7 +10,7 @@ branches:
   - dev
 env:
   global:
-  - GH_REF: github.com/owen-carter/owen-carter.github.io.git
+  - GH_REF: github.com/owen-carter/ng-zorro-admin.git
   - secure: i9+O/g5Xq1bcrIZ0urWbpSnPN1GzJiWtHmXpnNRqYAHTYmZSdq/U1RtZtE31Tcg6PbK2blnfkZsfzVi9f4Am/6HYnoVjQfHY2h2gWMPsDjaAOr5JmAxvnBJ+5K/AsNysgEQ08vPLtv5AjFauBRZGh4NeVlJE+3W+053rwXH5MX8uIqOI9NNfPMc7zD4ZwTJ7ZeftNEWs75Es0b7+AzIpB5EbM+X2u//wI37dSbIN00PeR05cBDT/ordpmY5nlnEW6XQ7HhjIuSDKN0pb+HTaHY+6Ey41GXqfm2JkHx39IiozMyPXtMrgFc9tHLERsCJxE4oiowS5nd3GPB+etk5MvwhexWPnoKk1atY55FeZs3pNF6bNHCXpdma4a6o1iARqMfj/yBAMp4UXmJ14bz3667xWmD8F3M97MCf6/FTDe7NWPCkgayImOWlF4K5xhRsXCYT1wipldgpg/FiqcAAdC/hdK6i8PvCM4R/fPOoKDsuc7+wxgSyGGfeYShX+Gamr2nQqf/R705Sdz77NxXXhdGeO/oBBbiIfd1c88+XmwdqbJFFVLor0cEFyRiWR12gIq8XOCZ6Vx90EdUsPCL1LF1idCwy2UfVZ2/jEFBv4HhW7+raA9yqlAtgCy+DA/uZ/pauKj0hbELVtEY4ilNQB1wETYViKnmeIrVKD8/lFsTc=
 before_install:
 - export TZ='Asia/Shanghai'
@@ -19,7 +19,6 @@ before_install:
 before_script:
 - git config --global user.name "owen-carter"
 - git config --global user.email owenjiao@outlook.com
-- sed -i'' "s~git@github.com:owen-carter/owen-carter.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/owen-carter/owen-carter.github.io.git~" _config.yml
 install:
 - npm install
 script:
