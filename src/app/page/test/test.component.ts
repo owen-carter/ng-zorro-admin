@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProjectService} from "../../service/project.service";
 import {NzMessageService} from "ng-zorro-antd";
-
+import {Msg} from "../../bean/msg";
 @Component({
     selector: 'nz-test',
     templateUrl: './test.component.html',
@@ -13,7 +13,7 @@ export class TestComponent implements OnInit {
     }
 
     ngOnInit() {
-        let ele = document.getElementById('file-sel')
+        let ele = document.getElementById('file-sel');
         ele.addEventListener('change', (e) => {
             console.dir(e)
         })
@@ -22,10 +22,9 @@ export class TestComponent implements OnInit {
     upload() {
         let ele: any = document.getElementById('file-sel')
         let fileList = ele.files;
-        console.dir(ele)
-        let formdata: FormData = new FormData();
-        formdata.append('book', fileList[0])
-        this.projectService.upload(formdata).then((response) => {
+        let formData: FormData = new FormData();
+        formData.append('book', fileList[0]);
+        this.projectService.upload(formData).then((response:Msg) => {
             if (response.status) {
                 this._message.info('success！');
             } else {
