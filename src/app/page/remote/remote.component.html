@@ -1,0 +1,72 @@
+<div style="background: #ECECEC;padding:0px;">
+
+    <div nz-row [nzGutter]="8">
+
+        <div nz-col [nzSpan]="24">
+
+            <nz-card style="width:100%;">
+                <ng-template #title>
+                    远程链接
+                </ng-template>
+                <ng-template #extra>
+                    <nz-switch [ngModel]="false">
+                        <span checked>开</span>
+                        <span unchecked>关</span>
+                    </nz-switch>
+                </ng-template>
+                <ng-template #body>
+
+
+                    <p>使用方法：填写远程主机ip，以及桥接端口，点击【连接】开始远程协助</p>
+                    <div class="split-line"></div>
+
+
+                    <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="_submitForm()">
+                        <div nz-form-item>
+                            <div nz-form-control [nzValidateStatus]="validateForm.controls.userName">
+                                <nz-input formControlName="userName"
+                                          [nzPlaceHolder]="'远程主机ip'"
+                                          [nzSize]="'large'"
+                                          style="width: 200px;">
+                                    <ng-template #prefix>
+                                        <i class="anticon anticon-user"></i>
+                                    </ng-template>
+                                </nz-input>
+                                <div nz-form-explain
+                                     *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">
+                                    Please input your username!
+                                </div>
+                            </div>
+                        </div>
+                        <div nz-form-item>
+                            <div nz-form-control [nzValidateStatus]="validateForm.controls.password">
+                                <nz-input formControlName="password"
+                                          [nzType]="'password'"
+                                          [nzPlaceHolder]="'桥接端口'"
+                                          style="width: 200px;"
+                                          [nzSize]="'large'">
+                                    <ng-template #prefix>
+                                        <i class="anticon anticon-lock"></i>
+                                    </ng-template>
+                                </nz-input>
+                                <div nz-form-explain
+                                     *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">
+                                    Please input your Password!
+                                </div>
+                            </div>
+                        </div>
+
+                        <button nz-button [nzType]="'primary'" [nzSize]="'large'" [disabled]="!validateForm.valid">
+                            连接
+                        </button>
+                    </form>
+
+
+                </ng-template>
+            </nz-card>
+
+        </div>
+
+    </div>
+
+</div>

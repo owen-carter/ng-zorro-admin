@@ -18,6 +18,7 @@ import {BackupComponent} from './page/backup/backup.component';
 import {LicenseComponent} from './page/license/license.component';
 import {LogComponent} from './page/log/log.component';
 import {AuditComponent} from './page/audit/audit.component';
+import {RemoteComponent} from './page/remote/remote.component';
 
 import {SystemComponent} from './page/system/system.component';
 import {SearchComponent} from './page/search/search.component';
@@ -46,6 +47,7 @@ export const routes: Routes = [
     {path: 'backup', component: BackupComponent},
     {path: 'license', component: LicenseComponent},
     {path: 'log', component: LogComponent},
+    {path: 'remote', component: RemoteComponent},
     {path: 'audit', component: AuditComponent},
     {path: 'system', component: SystemComponent},
     {path: 'search', component: SearchComponent},

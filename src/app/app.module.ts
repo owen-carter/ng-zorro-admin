@@ -43,9 +43,10 @@ import {ProjectImportComponent} from "./page/project/children/project-import/pro
 import {ProjectEditComponent} from "./page/project/children/project-edit/project-edit.component";
 import {RoleEditComponent} from "./page/role/children/role-edit/role-edit.component";
 import {CustomerEditComponent} from "./page/customer/children/customer-edit/customer-edit.component";
+import {RemoteComponent} from './page/remote/remote.component';
 
 @NgModule({
-    providers   : [
+    providers: [
         UserService,
         ProjectService
     ],
@@ -77,8 +78,9 @@ import {CustomerEditComponent} from "./page/customer/children/customer-edit/cust
         ProjectEditComponent,
         RoleEditComponent,
         CustomerEditComponent,
+        RemoteComponent,
     ],
-    imports     : [
+    imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
@@ -88,7 +90,7 @@ import {CustomerEditComponent} from "./page/customer/children/customer-edit/cust
         RabbitModule,
         AppRoutingModule
     ],
-    bootstrap   : [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
