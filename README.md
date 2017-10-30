@@ -18,5 +18,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![brand](./images/status.png)
 ![brand](./images/update.png)
 
-
+### Changelog
++ 现有版本
+  - ?
++ v1.0.0.1
+  - 远程协助
 
