@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-    selector: 'nz-notfind',
-    templateUrl: './notfind.component.html',
-    styleUrls: ['./notfind.component.less']
+    selector: 'nz-error',
+    templateUrl: './error.component.html',
+    styleUrls: ['./error.component.less']
 })
-export class NotfindComponent implements OnInit {
+export class ErrorComponent implements OnInit {
 
     _cpu = 70;
     _men = 7;
