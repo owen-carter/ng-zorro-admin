@@ -23,8 +23,8 @@
 
                     <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="_submitForm()">
                         <div nz-form-item>
-                            <div nz-form-control [nzValidateStatus]="validateForm.controls.userName">
-                                <nz-input formControlName="userName"
+                            <div nz-form-control [nzValidateStatus]="validateForm.controls.remoteIp">
+                                <nz-input formControlName="remoteIp"
                                           [nzPlaceHolder]="'远程主机ip'"
                                           [nzSize]="'large'"
                                           style="width: 200px;">
@@ -33,15 +33,15 @@
                                     </ng-template>
                                 </nz-input>
                                 <div nz-form-explain
-                                     *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">
+                                     *ngIf="validateForm.controls.remoteIp.dirty&&validateForm.controls.remoteIp.hasError('required')">
                                     Please input your username!
                                 </div>
                             </div>
                         </div>
                         <div nz-form-item>
-                            <div nz-form-control [nzValidateStatus]="validateForm.controls.password">
-                                <nz-input formControlName="password"
-                                          [nzType]="'password'"
+                            <div nz-form-control [nzValidateStatus]="validateForm.controls.remotePort">
+                                <nz-input formControlName="remotePort"
+                                          [nzType]="'text'"
                                           [nzPlaceHolder]="'桥接端口'"
                                           style="width: 200px;"
                                           [nzSize]="'large'">
@@ -50,7 +50,7 @@
                                     </ng-template>
                                 </nz-input>
                                 <div nz-form-explain
-                                     *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">
+                                     *ngIf="validateForm.controls.remotePort.dirty&&validateForm.controls.remotePort.hasError('required')">
                                     Please input your Password!
                                 </div>
                             </div>
