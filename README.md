@@ -68,13 +68,12 @@ server {
 ![brand](./images/remote.png)
 
 
-
 ### Changelog
-+ 现有版本
++ v1.0
   - 远程协助
   - 日志管理
   
-+ v1.0.0.1
++ v2.0
   - 远程协助
   - 日志管理
   - 系统升级
