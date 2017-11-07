@@ -16,7 +16,7 @@ export class RemoteComponent implements OnInit {
     onLine: boolean;
 
     constructor(private fb: FormBuilder) {
-        this.onLine = false;
+        this.onLine = true;
     }
 
     ngOnInit() {
@@ -35,3 +35,4 @@ export class RemoteComponent implements OnInit {
 
 
 }
+
