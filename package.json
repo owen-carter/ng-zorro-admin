@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "build:gitpage": "ng build --prod --base-href ./",
     "test": "ng test",
     "lint": "ng lint",
     "github": "ng github-pages:deploy --message 'Optional commit message'",
@@ -28,6 +29,7 @@
     "querystring": "^0.2.0",
     "rxjs": "^5.4.2",
     "tsd": "^0.6.5",
+    "webpack": "^3.8.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
