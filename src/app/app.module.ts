@@ -69,7 +69,7 @@ import {RemoteComponent} from './page/remote/remote.component';
         ReactiveFormsModule,
         HttpModule,
         BrowserAnimationsModule,
-        NgZorroAntdModule.forRoot({ extraFontName: 'anticon', extraFontUrl: './assets/fonts/iconfont' }),
+        NgZorroAntdModule.forRoot({extraFontName: 'anticon', extraFontUrl: './assets/fonts/iconfont'}),
         RabbitModule,
         AppRoutingModule
     ],
@@ -78,5 +78,6 @@ import {RemoteComponent} from './page/remote/remote.component';
 export class AppModule {
 
 }
+
 
 
