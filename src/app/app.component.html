@@ -1,134 +1,127 @@
-<!--引入根组件-->
-<nz-root [nzExtraFontName]="'anticon'" [nzExtraFontUrl]="'./assets/fonts/iconfont'">
+<!--content-->
+<nz-layout>
+    <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo">
+            sys
+        </div>
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
 
-    <!--content-->
-    <nz-layout>
-        <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-            <div class="logo">
-                sys
-            </div>
-            <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-
-                <li nz-menu-item routerLink="/dashboard" routerLinkActive="active">
+            <li nz-menu-item routerLink="/dashboard" routerLinkActive="active">
 					<span>
 						<i class="anticon anticon-appstore"></i>
 						<span class="nav-text">Dashboard</span>
 					</span>
-                </li>
+            </li>
 
-                <li nz-menu-item routerLink="/error" routerLinkActive="active">
+            <li nz-menu-item routerLink="/error" routerLinkActive="active">
 					<span>
 						<i class="anticon anticon-appstore"></i>
 						<span class="nav-text">Error</span>
 					</span>
-                </li>
+            </li>
 
-                <li nz-submenu>
+            <li nz-submenu>
 					<span title>
 						<i class="anticon anticon-user"></i>
 						<span class="nav-text">账户管理</span>
 					</span>
-                    <ul>
-                        <li nz-menu-item routerLink="/user">用户管理</li>
-                        <li nz-menu-item routerLink="/role">角色管理</li>
-                        <li nz-menu-item routerLink="/permission">权限管理</li>
-                        <li nz-menu-item routerLink="/audit">审计日志</li>
-                    </ul>
-                </li>
+                <ul>
+                    <li nz-menu-item routerLink="/user">用户管理</li>
+                    <li nz-menu-item routerLink="/role">角色管理</li>
+                    <li nz-menu-item routerLink="/permission">权限管理</li>
+                    <li nz-menu-item routerLink="/audit">审计日志</li>
+                </ul>
+            </li>
 
-                <li nz-submenu>
+            <li nz-submenu>
 					<span title>
 						<i class="anticon anticon-tool"></i>
 						<span class="nav-text">系统管理</span>
 					</span>
-                    <ul>
-                        <li nz-menu-item routerLink="/log">系统日志</li>
-                        <li nz-menu-item routerLink="/system">系统状态</li>
-                        <li nz-menu-item routerLink="/backup">数据库备份</li>
-                        <li nz-menu-item routerLink="/upgrade">系统升级</li>
-                        <li nz-menu-item routerLink="/license">证书管理</li>
-                        <li nz-menu-item routerLink="/remote">远程协助</li>
-                    </ul>
-                </li>
-                <li nz-menu-item routerLink="/configure">
+                <ul>
+                    <li nz-menu-item routerLink="/log">系统日志</li>
+                    <li nz-menu-item routerLink="/system">系统状态</li>
+                    <li nz-menu-item routerLink="/backup">数据库备份</li>
+                    <li nz-menu-item routerLink="/upgrade">系统升级</li>
+                    <li nz-menu-item routerLink="/license">证书管理</li>
+                    <li nz-menu-item routerLink="/remote">远程协助</li>
+                </ul>
+            </li>
+            <li nz-menu-item routerLink="/configure">
 					<span>
 						<i class="anticon anticon-setting"></i>
 						<span class="nav-text">系统配置</span>
 					</span>
-                </li>
-            </ul>
-        </nz-sider>
+            </li>
+        </ul>
+    </nz-sider>
 
-        <nz-layout>
+    <nz-layout>
 
-            <nz-header style="background: #fff; padding:0;">
+        <nz-header style="background: #fff; padding:0;">
 
-                <i class="anticon trigger"
-                   [class.anticon-menu-fold]="!isCollapsed"
-                   [class.anticon-menu-unfold]="isCollapsed"
-                   (click)="isCollapsed=!isCollapsed">
-                </i>
+            <i class="anticon trigger"
+               [class.anticon-menu-fold]="!isCollapsed"
+               [class.anticon-menu-unfold]="isCollapsed"
+               (click)="isCollapsed=!isCollapsed">
+            </i>
 
-                <nz-breadcrumb style="display: inline;float: right;margin-right: 30px">
-                    <nz-breadcrumb-item>
-                        <a href="">
-                            <i class="anticon anticon-user"></i>
-                            <span>owen-carter</span>
+            <nz-breadcrumb style="display: inline;float: right;margin-right: 30px">
+                <nz-breadcrumb-item>
+                    <a href="">
+                        <i class="anticon anticon-user"></i>
+                        <span>owen-carter</span>
+                    </a>
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                    <!--<a href="">个人中心</a>-->
+
+                    <!---->
+
+                    <nz-dropdown>
+                        <a class="ant-dropdown-link" nz-dropdown>
+                            个人中心
+                            <i class="anticon anticon-down"></i>
                         </a>
-                    </nz-breadcrumb-item>
-                    <nz-breadcrumb-item>
-                        <!--<a href="">个人中心</a>-->
+                        <ul nz-menu>
+                            <li nz-menu-item>
+                                <a rel="noopener noreferrer" href="/">
+                                    消息中心
+                                </a>
+                            </li>
+                            <li nz-menu-item>
+                                <a rel="noopener noreferrer" href="/">
+                                    账号设置
+                                </a>
+                            </li>
+                        </ul>
+                    </nz-dropdown>
 
-                        <!---->
+                    <!---->
 
-                        <nz-dropdown>
-                            <a class="ant-dropdown-link" nz-dropdown>
-                                个人中心
-                                <i class="anticon anticon-down"></i>
-                            </a>
-                            <ul nz-menu>
-                                <li nz-menu-item>
-                                    <a rel="noopener noreferrer" href="/">
-                                        消息中心
-                                    </a>
-                                </li>
-                                <li nz-menu-item>
-                                    <a rel="noopener noreferrer" href="/">
-                                        账号设置
-                                    </a>
-                                </li>
-                            </ul>
-                        </nz-dropdown>
+                </nz-breadcrumb-item>
+                <nz-breadcrumb-item>
+                    <a href="/login/out">注销</a>
+                </nz-breadcrumb-item>
+            </nz-breadcrumb>
+        </nz-header>
 
-                        <!---->
+        <nz-content style="margin:0 16px;">
 
-                    </nz-breadcrumb-item>
-                    <nz-breadcrumb-item>
-                        <a href="/login/out">注销</a>
-                    </nz-breadcrumb-item>
-                </nz-breadcrumb>
-            </nz-header>
+            <nz-breadcrumb style="margin:12px 0;">
+                <nz-breadcrumb-item *ngFor="let item of position">{{item}}</nz-breadcrumb-item>
+            </nz-breadcrumb>
 
-            <nz-content style="margin:0 16px;">
+            <div style="padding:24px; background: #fff; min-height: 360px;">
+                <!--content-->
+                <!--content-->
 
-                <nz-breadcrumb style="margin:12px 0;">
-                    <nz-breadcrumb-item *ngFor="let item of position">{{item}}</nz-breadcrumb-item>
-                </nz-breadcrumb>
+                <router-outlet></router-outlet>
 
-                <div style="padding:24px; background: #fff; min-height: 360px;">
-                    <!--content-->
-                    <!--content-->
-
-                    <router-outlet></router-outlet>
-
-                    <!--content -->
-                    <!--content -->
-                </div>
-            </nz-content>
-            <nz-footer style="text-align: center;"> Ant Design ©2017 Powered By owen-carter</nz-footer>
-        </nz-layout>
+                <!--content -->
+                <!--content -->
+            </div>
+        </nz-content>
+        <nz-footer style="text-align: center;"> Ant Design ©2017 Powered By owen-carter</nz-footer>
     </nz-layout>
-
-
-    <!--content end-->
-</nz-root>
+</nz-layout>
