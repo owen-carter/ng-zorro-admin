@@ -5,8 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build --prod",
-    "build:gitpage": "ng build --prod --base-href ./",
+    "build:dev": "ng build",
+    "build:rpod": "ng build --prod --build-optimizer",
+    "build:gitpage": "ng build --base-href /ng-zorro-admin/",
     "test": "ng test",
     "lint": "ng lint",
     "github": "ng github-pages:deploy --message 'Optional commit message'",
