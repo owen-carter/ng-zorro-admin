@@ -7,6 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class LicenseComponent implements OnInit {
 
+    status: string;
     inputValue: string;
     seriesNumber: string;
 
@@ -14,7 +15,9 @@ export class LicenseComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.status = 'normal';
         this.seriesNumber = 'ab587e1e-6f7a-11e7-8dd6-f07959e0b919';
+        this.inputValue = '';
     }
 
 }

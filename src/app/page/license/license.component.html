@@ -1,49 +1,52 @@
 <nz-alert [nzType]="'success'"
-		  [nzMessage]="'授权通过，正在授权期限内！'"
-		  [nzDescription]="'您可以尽情使用，距离授权失效还有一年！'"
-		  [nzShowIcon]="'true'">
+          *ngIf="status=='normal'"
+          [nzMessage]="'授权通过，正在授权期限内！'"
+          [nzDescription]="'您可以尽情使用，距离授权失效还有一年！'"
+          [nzShowIcon]="'true'">
 </nz-alert>
 
 <div class="split-line"></div>
 
 <nz-alert [nzType]="'warning'"
-		  [nzMessage]="'注意！还有一个月，授权即将到期！'"
-		  [nzDescription]="'请注意续费，防止证书到期，影响正常业务！'"
-		  [nzShowIcon]="'true'">
+          *ngIf="status=='danger'"
+          [nzMessage]="'注意！还有一个月，授权即将到期！'"
+          [nzDescription]="'请注意续费，防止证书到期，影响正常业务！'"
+          [nzShowIcon]="'true'">
 </nz-alert>
 
 <div class="split-line"></div>
 
 <nz-alert [nzType]="'error'"
-		  [nzMessage]="'sorry！您的授权已经过期！'"
-		  [nzDescription]="'相关服务将不能使用！'"
-		  [nzShowIcon]="'true'">
+          *ngIf="status=='timeout'"
+          [nzMessage]="'sorry！您的授权已经过期！'"
+          [nzDescription]="'相关服务将不能使用！'"
+          [nzShowIcon]="'true'">
 </nz-alert>
 
 <div class="split-line"></div>
 
 
 <nz-card style="width:100%;" [nzBordered]="true" class="license-input-box">
-	<ng-template #title>
-		激活
-	</ng-template>
-	<ng-template #extra>
-		<a>更换序列号</a>
-	</ng-template>
-	<ng-template #body>
-		<p>序列号：</p>
-		<a class="series-number">ab587e1e-6f7a-11e7-8dd6-f07959e0b919</a>
-		<p>激活方法：点击复制序列号，或者下载序列号文件，发送到厂家索取证书文件！</p>
-		<div class="split-line"></div>
-		<nz-input [(ngModel)]="inputValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请输入证书号码！'">
-		</nz-input>
+    <ng-template #title>
+        激活
+    </ng-template>
+    <ng-template #extra>
+        <a>更换序列号</a>
+    </ng-template>
+    <ng-template #body>
+        <p>序列号：</p>
+        <a class="series-number">ab587e1e-6f7a-11e7-8dd6-f07959e0b919</a>
+        <p>激活方法：点击复制序列号，或者下载序列号文件，发送到厂家索取证书文件！</p>
+        <div class="split-line"></div>
+        <nz-input [(ngModel)]="inputValue" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请输入证书号码！'">
+        </nz-input>
 
-		<div class="split-line"></div>
-		<button nz-button [nzType]="'primary'" style="float: right">
-			<span>激活</span>
-		</button>
+        <div class="split-line"></div>
+        <button nz-button [nzType]="'primary'" style="float: right">
+            <span>激活</span>
+        </button>
 
-	</ng-template>
+    </ng-template>
 
 
 </nz-card>

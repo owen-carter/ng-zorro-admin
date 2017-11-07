@@ -13,6 +13,19 @@ import {
 export class RemoteComponent implements OnInit {
 
     validateForm: FormGroup;
+    onLine: boolean;
+
+    constructor(private fb: FormBuilder) {
+        this.onLine = false;
+    }
+
+    ngOnInit() {
+        this.validateForm = this.fb.group({
+            remoteIp: [null, [Validators.required]],
+            remotePort: [null, [Validators.required]],
+            remember: [true],
+        });
+    }
 
     _submitForm() {
         for (const i in this.validateForm.controls) {
@@ -20,15 +33,5 @@ export class RemoteComponent implements OnInit {
         }
     }
 
-    constructor(private fb: FormBuilder) {
-    }
-
-    ngOnInit() {
-        this.validateForm = this.fb.group({
-            userName: [null, [Validators.required]],
-            password: [null, [Validators.required]],
-            remember: [true],
-        });
-    }
 
 }
