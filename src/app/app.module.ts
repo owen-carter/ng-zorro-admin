@@ -16,6 +16,7 @@ import {UserService} from "./service/user.service";
 import {ProjectService} from "./service/project.service";
 // component
 import {DashboardComponent} from "./page/dashboard/dashboard.component";
+import {ErrorComponent} from "./page/error/error.component";
 
 import {UserComponent} from "./page/user/user.component";
 import {UserEditComponent} from "./page/user/children/user-edit/user-edit.component";
@@ -45,6 +46,7 @@ import {RemoteComponent} from './page/remote/remote.component';
     declarations: [
         AppComponent,
         DashboardComponent,
+        ErrorComponent,
         UserComponent,
         RoleComponent,
         PermissionComponent,

@@ -4,6 +4,7 @@
 import {Routes} from '@angular/router';
 // Component
 import {DashboardComponent} from './page/dashboard/dashboard.component';
+import {ErrorComponent} from './page/error/error.component';
 import {UserComponent} from './page/user/user.component';
 import {UserEditComponent} from './page/user/children/user-edit/user-edit.component';
 import {RoleComponent} from './page/role/role.component';
@@ -22,6 +23,7 @@ import {SystemComponent} from './page/system/system.component';
 export const routes: Routes = [
     {path: '', component: DashboardComponent},
     {path: 'dashboard', component: DashboardComponent},
+    {path: 'error', component: ErrorComponent},
     {path: 'user', component: UserComponent},
     {path: 'user.edit/:id', component: UserEditComponent},
     {path: 'role', component: RoleComponent},
